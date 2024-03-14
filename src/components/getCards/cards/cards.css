@@ -1,0 +1,88 @@
+
+.cards_heroes {
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    max-width: 70%;
+    flex-wrap: wrap;
+}
+
+
+
+.card_hero {
+    border: solid 2px gold;
+    margin: 10px 20px 10px 20px;
+    border-radius: 15%;
+    font-family: cursive;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 35vh;
+    height: 95%;
+}
+
+.card_hero:hover {
+    transition: .3s linear;
+    transform: scale(1.03);
+    background: linear-gradient(to top, #3e5151, #decba4);
+}
+
+.card_hero img {
+    max-width: 70%;
+    max-height: 70%;
+    height: auto;
+}
+
+.hero_name  {
+    font-style: italic;
+    font-weight: 600;
+    color: brown;
+}
+
+.background_tavern_container {
+    position: relative;
+}
+
+.hero_type {
+    color:gold
+}
+
+ul {
+    margin-top: 0;
+}
+
+.big_background_tavern_container {
+    content: '';
+    position:static;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+    background-color: #ab9545;
+    background-image: linear-gradient(45deg, #ab9545 0%, #9adc0b 100%);
+}
+
+.background_tavern_container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: url('../../../resourses/Tavern_Brawl_Key_Art.png') center center / cover no-repeat;
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+}
+
+ .big_background_tavern_container .cards_heroes{
+    max-width: 100%;
+}
+
+
+
+
+
