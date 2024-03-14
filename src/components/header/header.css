@@ -23,11 +23,18 @@ h2 {
   font-family: cursive;
 }
 
+.nav_section {
+  width: 100%;
+
+}
+
 .buttons {
-    margin-right: 30vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .buttons_ability {
+
   align-items: center;
   background-clip: padding-box;
   background-color: #5542355a;
@@ -37,21 +44,14 @@ h2 {
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  display: inline-flex;
+  display: block;
+  justify-content: space-between;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
   font-weight: 600;
-  justify-content: center;
+  text-align: center;
   line-height: 1.25;
-  margin: 0;
-  max-height: 2rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relataive;
-  text-decoration: none;
-  transition: all 250ms;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
+  padding: 10px;
 }
 
 .buttons_ability:hover,
@@ -93,19 +93,33 @@ h2 {
  */
 .list_ability {
   position: absolute;
-  top: 10px;
-  display: flex;
+  display: none;
+  width: max-content;
+  border: 1px solid black;
+  max-height: fit-content;
+  background-color: black;
+  z-index: 1;
+  margin: 0;
+  word-break: break-all;
+  padding: 0;
 }
 
  .heartstone_ability {
-    display: none;
+    padding: 4px 10px;
     list-style: none;
     color: white;
+    width: 100%;
+    margin: 0;  
  }
 
- .buttons_ability:hover > .heartstone_ability {
-    display: initial;
-    top: 100%;
+ .buttons_ability:hover > .list_ability {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    max-height: fit-content;
+    gap: 10px;
+    top: 50px;
+    right: 4px;
     z-index: 1;
  }
 

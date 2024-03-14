@@ -33,20 +33,22 @@ const Header = () => {
                     <img className="logo" src={logo} alt="logo"/>
                     <h2>Hearthstone APP</h2>
                 </section>
-                <div className="buttons">
-                    {info && Object.entries(info).map(([key, value]) => {
-                        console.log(Object.entries(info));
-                return (
-                    <div className="buttons_ability">
-                        <ul className="list_ability">
-                            {key} {Array.isArray(value) && value.map((item, index) => (
-                                <li key={index} className="heartstone_ability">{item}</li>
-                            ))}
-                        </ul>
+                <section className="nav_section">
+                    <div className="buttons">
+                        {info && Object.entries(info).map(([key, value]) => (
+                        <div className="buttons_ability">
+                            {key}
+                            <ul className="list_ability">
+                                {Array.isArray(value) && value.map((item, index) => (
+                                    <li key={index} className="heartstone_ability">{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        )
+                    )}
                     </div>
-                    )
-                })}
-                </div>
+                </section>
+                
             </header>
             
         </>
