@@ -4,7 +4,7 @@ import { Http } from "../hooks/http.hooks";
 
 const HearthstoneService =  () => {
 
-    const {request} = Http();
+    const {request, proces, setProces} = Http();
 
     const urlCards = 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/search';
     const urlInfo = 'https://omgvamp-hearthstone-v1.p.rapidapi.com/info';
@@ -45,7 +45,7 @@ const HearthstoneService =  () => {
 
         }
 
-        return {getAllClasses, getInfo}
+        return {getAllClasses, getInfo, proces, setProces}
     };
 
 

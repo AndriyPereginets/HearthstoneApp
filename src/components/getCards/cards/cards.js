@@ -1,15 +1,24 @@
+import setContent from '../../../utils/setContent';
 
 import './cards.css';
+const Cards = ({data, process}) => {
 
-
-const Cards = ({data}) => {
-
+    console.log(data);
+    console.log(process);
 
     return (
         <>
-        <div className={data.length > 8 ? 'big_background_tavern_container' : 'background_tavern_container' }>
+            <div className={data.length > 8 ? 'big_background_tavern_container' : 'background_tavern_container' }>
+               {setContent(process, View, data)}
+            </div>
+        </>
+    )
+}
+
+const View = ({data}) => {
+        return (
             <ul className="cards_heroes">
-                {data && data.map((ability) => (
+                {data?.length && data.map((ability) => (
                     <li key={ability.cardId}>
                         <section className="card_hero">
                             <div className="hero_name">Name: {ability.name}</div>
@@ -21,11 +30,7 @@ const Cards = ({data}) => {
                     </li>
                 ))}
             </ul>
-        </div>
-        </>
-    )
+        )   
 }
-
-
 
 export default Cards;

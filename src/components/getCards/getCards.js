@@ -10,7 +10,7 @@ const GetCards = () => {
     const [data, setData] = useState([]);
     const [search, setSearch] = useState('');
 
-    const {getAllClasses} = HearthstoneService();
+    const {getAllClasses, proces, setProces} = HearthstoneService();
 
     const handleSearch = async () => {
         const res = await getAllClasses(search);
@@ -24,10 +24,9 @@ const GetCards = () => {
                 if (!data.length) {
                     const res =  await getAllClasses()
                     const filteredCards = res.filter(ability => ability.img);
-                    console.log(res);
                     setData(filteredCards);
+                    setProces('waiting');
                 }
-               
             } catch {
                  console.error('Something wrong!');
             }
@@ -35,12 +34,11 @@ const GetCards = () => {
         getData();
     }, [getAllClasses, data])
 
-    console.log(search);
 
     return (
         <>   
             <SearchHero search={search} setSearch={setSearch} handleSearch={handleSearch}/>
-            <Cards search={search} data={data}/>
+            <Cards search={search} data={data} process={proces}/>
         </> 
     )
 }

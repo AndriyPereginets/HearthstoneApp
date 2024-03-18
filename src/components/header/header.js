@@ -23,7 +23,6 @@ const Header = () => {
             // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    console.log(info);
     
 
     return (
@@ -35,14 +34,9 @@ const Header = () => {
                 </section>
                 <section className="nav_section">
                     <div className="buttons">
-                        {info && Object.entries(info).map(([key, value]) => (
+                        {info && Object.entries(info).map(([key]) => (
                         <div className="buttons_ability">
                             {key}
-                            <ul className="list_ability">
-                                {Array.isArray(value) && value.map((item, index) => (
-                                    <li key={index} className="heartstone_ability">{item}</li>
-                                ))}
-                            </ul>
                         </div>
                         )
                     )}

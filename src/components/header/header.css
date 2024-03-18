@@ -1,7 +1,7 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-top: gold solid 2px;
     background:linear-gradient(to top, #e7a517, #e03333);;
@@ -23,18 +23,16 @@ h2 {
   font-family: cursive;
 }
 
-.nav_section {
-  width: 100%;
-
-}
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  gap: 12px;
 }
 
 .buttons_ability {
-
   align-items: center;
   background-clip: padding-box;
   background-color: #5542355a;
@@ -69,65 +67,4 @@ h2 {
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
-
-
-/* .heartstone_ability {
-    display: none;
-    z-index: -1;
-    box-shadow: 2px 2px 0 #BEBEBE;
-    list-style: none;
-    position: absolute;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.buttons_ability:hover .heartstone_ability {
-    z-index: 1;
-    display: flex; 
-    flex-direction: row;
-    position: absolute;
-    height: 100%;
-    top: 100%; 
-    left: 0; 
-}
- */
-.list_ability {
-  position: absolute;
-  display: none;
-  width: max-content;
-  border: 1px solid black;
-  max-height: fit-content;
-  background-color: black;
-  z-index: 1;
-  margin: 0;
-  word-break: break-all;
-  padding: 0;
-}
-
- .heartstone_ability {
-    padding: 4px 10px;
-    list-style: none;
-    color: white;
-    width: 100%;
-    margin: 0;  
- }
-
- .buttons_ability:hover > .list_ability {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    max-height: fit-content;
-    gap: 10px;
-    top: 50px;
-    right: 4px;
-    z-index: 1;
- }
-
- .nav_list {
-    position: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-    gap: 12px;
- }
 
