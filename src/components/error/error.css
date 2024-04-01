@@ -1,0 +1,11 @@
+
+.oops_logo {
+    width: 80vh;
+    height: 60vh;
+}
+
+.error_text {
+    font-family: cursive;
+    font-weight: 600;
+    color: red;
+}

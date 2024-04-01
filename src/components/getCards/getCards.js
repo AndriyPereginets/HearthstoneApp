@@ -13,9 +13,14 @@ const GetCards = () => {
     const {getAllClasses, proces, setProces} = HearthstoneService();
 
     const handleSearch = async () => {
-        const res = await getAllClasses(search);
-        const filteredCards = res.filter(ability => ability.img);
-        setData(filteredCards);
+        try {
+            const res = await getAllClasses(search);
+            const filteredCards = res.filter(ability => ability.img);
+            setData(filteredCards);
+        } catch {
+            setProces('error')
+        }
+        
     };
 
     useEffect(() => {
@@ -28,15 +33,15 @@ const GetCards = () => {
                     setProces('waiting');
                 }
             } catch {
-                 console.error('Something wrong!');
+                 setProces('error');
             }
         }
         getData();
-    }, [getAllClasses, data])
+    }, [getAllClasses, data, setProces])
 
 
     return (
-        <>   
+        <>  
             <SearchHero search={search} setSearch={setSearch} handleSearch={handleSearch}/>
             <Cards search={search} data={data} process={proces}/>
         </> 

@@ -1,0 +1,34 @@
+.footer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 20vh;
+    border: solid 1px gold;
+}
+
+.footer_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blizzard_logo {
+    width: 25vh;
+    height: 10vh;
+}
+
+a {
+    color: white;
+}
+
+p {
+    padding: 20px;
+}
+
+a:hover {
+    color: red;
+}

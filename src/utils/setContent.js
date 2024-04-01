@@ -1,4 +1,5 @@
 import Spiner from '../spiner/spiner';
+import ErrorDetected from '../components/error/error';
 
 const setContent = (proces, Component, data) => {
     switch (proces) {
@@ -9,7 +10,7 @@ const setContent = (proces, Component, data) => {
         case 'confirmed': 
             return <Component data={data}/>;
         case 'error':
-            return;
+            return <ErrorDetected/>;
         default:
             throw new Error('Unexpected srate proces')
     }
