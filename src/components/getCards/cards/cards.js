@@ -17,7 +17,7 @@ const Cards = ({data, process}) => {
 
 const View = ({data}) => {
         return (
-            <div className={data.length > 12 ? 'big_background_tavern_container' : 'background_tavern_container' }>
+            <div className={data.length > 10 ? 'big_background_tavern_container' : 'background_tavern_container' }>
                 <ul className="cards_heroes">
                     {data?.length && data.map((ability) => (
                         <li key={ability.cardId}>
