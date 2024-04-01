@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import HearthstoneService from "../service/service"
+import HearthstoneService from "../service/service";
+import { Link } from "react-router-dom";
 
 import './header.css'
 import logo from '../../resourses/hearstone.png'
@@ -35,9 +36,9 @@ const Header = () => {
                 <section className="nav_section">
                     <div className="buttons">
                         {info && Object.entries(info).map(([key]) => (
-                        <div className="buttons_ability">
+                        <Link to={`/filter/${key}`} alt={key} className="buttons_ability">
                             {key}
-                        </div>
+                        </Link>
                         )
                     )}
                     </div>
