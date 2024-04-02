@@ -45,7 +45,7 @@ const HearthstoneService =  () => {
 
         }
 
-        return {getAllClasses, getInfo, proces, setProces}
+        return {getAllClasses, getInfo,  proces, setProces}
     };
 
 

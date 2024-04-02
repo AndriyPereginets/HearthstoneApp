@@ -9,15 +9,21 @@ const Header = () => {
 
     const [info, setInfo] = useState('');
 
-    const {getInfo} = HearthstoneService();
+    const {getInfo, setProces} = HearthstoneService();
 
     useEffect( () => {
         const getInfoHeartsone = async() => {
             try {
                 const res = await getInfo();
-                setInfo(res);
+                const filteredButtons = Object.keys(res).reduce((acc, key) => {
+                    if (key !== 'Locales') {
+                        acc[key] = res[key]
+                    } 
+                        return acc;
+                }, {})
+                setInfo(filteredButtons);
             } catch {
-                console.error("Error fetching Hearthstone info:");
+                setProces('error')
             }
         }
             getInfoHeartsone();
@@ -29,14 +35,14 @@ const Header = () => {
     return (
         <>
             <header className="header">
-                <section className="logo_header">
+                <Link to={'/'} className="logo_header">
                     <img className="logo" src={logo} alt="logo"/>
                     <h2>Hearthstone APP</h2>
-                </section>
+                </Link>
                 <section className="nav_section">
                     <div className="buttons">
                         {info && Object.entries(info).map(([key]) => (
-                        <Link to={`/filter/${key}`} alt={key} className="buttons_ability">
+                        <Link to={`/filter/${key}`} key={key} className="buttons_ability">
                             {key}
                         </Link>
                         )

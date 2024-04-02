@@ -3,10 +3,12 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import GetCards from './components/getCards/getCards';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import Path from './pages/Path';
+import Ability from './pages/ability';
 
 
 import './App.css';
+
+
 
 function App() {
 
@@ -17,7 +19,7 @@ function App() {
           <Header/>
           <Routes>
               <Route path="/" element={<GetCards/>}/>
-              <Route path="/filter/:category" element={<Path/>}/>
+              <Route path="/filter/:category" element={<Ability/>}/>
           </Routes>
           <Footer/>
       </div>

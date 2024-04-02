@@ -3,9 +3,6 @@ import setContent from '../../../utils/setContent';
 import './cards.css';
 const Cards = ({data, process}) => {
 
-    console.log(data);
-    console.log(process);
-
     return (
         <>
             <div>

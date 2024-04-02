@@ -21,14 +21,13 @@
     height: 10vh;
 }
 
-a {
-    color: white;
-}
-
 p {
     padding: 20px;
 }
+.link {
+    color: white;
+}
 
-a:hover {
+.link:hover {
     color: red;
 }
